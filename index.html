@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="/images/favicon.png" />
+    <title>REAINBOW AUTUMN</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="shorcut icon" type="image/png" href="images\wibu.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<div class="container">
+    <div class="box">
+        <div class="clock">
+            <div class="hour">
+                <div class="hr" id="hr"></div>
+            </div>
+            <div class="min">
+                <div class="mn" id="mn"></div>
+            </div>
+            <div class="sec">
+                <div class="sc" id="sc"></div>
+
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+<body oncontextmenu="return false">
+<div>
+        <div>
+            <button class="snip1582" onclick="location.href='https://discord.gg/rainbow-autumn'">Khám Phá RBA</button>
+        </div>
+        <audio id="lesson" src="assets/RBA Audio.mp3" autoplay="false" hidden="true" loop="true">
+        <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+        <script src="./scripts/script.js"></script>
+    
+</div>
+
+</body>
+<script type="text/javascript">
+     var play = false;
+    var myAudio = document.getElementById("lesson");
+
+    myAudio.volume = 0.5;
+
+    function onKeyDown(event) {
+        switch (event.keyCode) {
+            case 32:
+                if (play) {
+                    myAudio.pause();
+                    play = false;
+                } else {
+                    myAudio.play();
+                    play = true;
+                }
+                break;
+        }
+        return false;
+    }
+
+    window.addEventListener("keydown", onKeyDown, false);
+
+    // To disable right click
+    document.addEventListener('contextmenu', event => event.preventDefault());
+
+    // To disable F12 options
+    document.onkeypress = function(event) {
+        event = (event || window.event);
+        if (event.keyCode == 123) {
+            alert('Xin lỗi bạn hí hí, mình tắt phím này rồi!!');
+            return false;
+        }
+    }
+    document.onmousedown = function(event) {
+        event = (event || window.event);
+        if (event.keyCode == 123) {
+            alert('Xin lỗi bạn hí hí, mình tắt phím này rồi!!');
+            return false;
+        }
+    }
+    document.onkeydown = function(event) {
+        event = (event || window.event);
+        if (event.keyCode == 123) {
+            alert('Xin lỗi bạn hí hí, mình tắt phím này rồi!!');
+            return false;
+        }
+    }
+
+    // To To Disable ctrl+c, ctrl+u
+
+    jQuery(document).ready(function($) {
+        $(document).keydown(function(event) {
+            var pressedKey = String.fromCharCode(event.keyCode).toLowerCase();
+
+            if (event.ctrlKey && (pressedKey == "c" || pressedKey == "u")) {
+                alert('Xin lỗi bạn hí hí, mình tắt tổ hợp phím này rồi!!');
+                //disable key press porcessing
+                return false;
+            }
+            if (event.ctrlKey && event.shiftKey && (pressedKey == "i")) {
+                alert('Xin lỗi bạn hí hí, mình tắt tổ hợp phím này rồi!!');
+                //disable key press porcessing
+                return false;
+            }
+        });
+    }); 
+</script>
+<script src="./scripts/player.js"></script>
+<script>
+    const deg = 6;
+    const hr =document.querySelector('#hr');
+    const mn =document.querySelector('#mn');
+    const sc =document.querySelector('#sc');
+    
+setInterval(() => {
+    let day = new Date();
+    let hh = day.getHours() * 30;
+    let mm = day.getMinutes() * deg;
+    let ss = day.getSeconds() * deg;
+
+    hr.style.transform = `rotateZ(${hh+(mm/12)}deg)`;
+    mn.style.transform = `rotateZ(${(mm)}deg)`;
+    sc.style.transform = `rotateZ(${(ss)}deg)`;
+})
+document.getElementById('clock').innerHTML =
+hours+ "  :  " + minutes + "  :  " + seconds + " " +amPm;
+var t = setTimeout(realtimeClock,500);
+
+    
+</script>
+
+</html>

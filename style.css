@@ -1,0 +1,208 @@
+@import url("https://fonts.googleapis.com/css?family=DM+Sans:400,500|Jost:400,500,600&display=swap");
+
+*{
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+
+body {
+    color: #2b2c48;
+    font-family: "Quicksand", sans-serif;
+    background-image: url(https://cdn.discordapp.com/attachments/1060933895534674030/1061081276393721976/wc_gif.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    overflow: hidden;
+    flex-wrap: wrap;
+    padding: 20px;
+    background-size: cover;
+    background-position-y: -100px;
+}
+
+/* button hiệu ứng */
+.snip1582 {
+    background-color: #3503e9;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: 'BenchNine', Arial, sans-serif;
+    font-size: 1em;
+    font-size: 22px;
+    line-height: 1em;
+    margin: 40px 150px;
+    outline: none;
+    padding: 12px 10px 10px;
+    position: relative;
+    text-transform: uppercase;
+    font-weight: 700;
+    width: 200px;
+    left: 34%;
+    top: 705px;
+  }
+  
+  .snip1582:before,
+  .snip1582:after {
+    border-color: transparent;
+    -webkit-transition: all 0.25s;
+    transition: all 0.25s;
+    border-style: solid;
+    border-width: 0;
+    content: "";
+    height: 24px;
+    position: absolute;
+    width: 30px;
+  }
+  
+  .snip1582:before {
+    border-color: #0cdfee;
+    border-top-width: 2px;
+    left: 0px;
+    top: -5px;
+  }
+  
+  .snip1582:after {
+    border-bottom-width: 2px;
+    border-color: #0cdfee;
+    bottom: -5px;
+    right: 0px;
+  }
+  
+  .snip1582:hover,
+  .snip1582.hover {
+    background-color: #0cdfee;
+  }
+  
+  .snip1582:hover:before,
+  .snip1582.hover:before,
+  .snip1582:hover:after,
+  .snip1582.hover:after {
+    height: 100%;
+    width: 100%;
+  }
+  .snip1582 a{
+    text-decoration: none;
+  }
+
+
+
+
+.box {
+    position: absolute;
+    top: 100px;
+    z-index: 1;
+    width: 200px;
+    height: 200px;
+    backdrop-filter: blur(25px);
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    animation: dongho 5s ease-in-out infinite;
+    animation-delay: -2.5s;
+}
+
+@keyframes dongho {
+    0% {
+        transform: translateY(10px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.clock {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(transparent, rgba(255, 255, 255, 0.2)), url(https://media.discordapp.net/attachments/621778286460272690/889494719124631582/clock.png);
+    border-radius: 50%;
+    backdrop-filter: blur(25px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: none;
+    border-right: none;
+    box-shadow: -10px -10px 20px rgba(255, 255, 255, 0.1), 10px 10px 20px rgba(0, 0, 0, 0.1), 10px 40px 50px rgba(0, 0, 0, 0.2);
+}
+
+.clock::before {
+    content: '';
+    position: absolute;
+    width: 7.5px;
+    height: 7.5px;
+    background: #fff;
+    border-radius: 50%;
+    z-index: 10000;
+}
+
+.hour,
+.min,
+.sec {
+    position: absolute;
+}
+
+.hour,
+.hr {
+    width: 80px;
+    height: 80px;
+}
+
+.min,
+.mn {
+    width: 110px;
+    height: 110px;
+}
+
+.sec,
+.sc {
+    width: 140px;
+    height: 140px;
+}
+
+.hr,
+.mn,
+.sc {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    border-radius: 50%;
+}
+
+.hr::before {
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 40px;
+    background: #ff105e;
+    z-index: 11;
+    border-radius: 6px;
+}
+
+.mn::before {
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 60px;
+    background: #fff;
+    z-index: 12;
+    border-radius: 6px;
+}
+
+.sc::before {
+    content: '';
+    position: absolute;
+    width: 1px;
+    height: 90px;
+    background: #fff;
+    z-index: 12;
+    border-radius: 6px;
+}
